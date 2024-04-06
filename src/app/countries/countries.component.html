@@ -1,1 +1,25 @@
-<p>countries works!</p>
+<h1>Countries</h1>
+<table class="table table-striped">
+    <thead>
+        <tr> 
+            <th>Id</th>
+            <th>Name</th>
+            <th>iso2</th>
+            <th>iso3</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (country of countries; track $index) {
+            <tr>
+                <td>
+                    <a [routerLink] ="['/countryCities', country.countryId]">
+                        {{country.countryId}}
+                    </a>
+                </td>
+                <td>{{country.name}}</td>
+                <td>{{country.iso2}}</td>
+                <td>{{country.iso3}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
